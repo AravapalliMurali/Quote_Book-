@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
  
 export default function QuoteForm(props){
+    const {formSubmit} = props
     const [name,setName] = useState('')
     const [body,setBody] = useState('')
 
@@ -20,7 +21,11 @@ export default function QuoteForm(props){
             name:name,
             body:body
         }
-        console.log(formData)
+        
+        formSubmit(formData)
+
+        setName('')
+        setBody('')
 
     }
 
