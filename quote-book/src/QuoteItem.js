@@ -1,15 +1,18 @@
 import React from 'react'
 
 export default function QuoteItem(props){
-    const {id , name , body , removeItem} = props
+    const {id , name , body , RemoveItem} = props
 
-    const handleRemove = (id) =>{
-        removeItem(id)
+    const handleRemove = () =>{
+        const confirmation  = window.confirm('Are you sure ?')
+        if(confirmation){
+            RemoveItem(id)
+        }
     }
 
     return(
         <div>
-            {body}---{name}
+            <blockquote>{body}---{name}</blockquote>
             <button>Edit</button>
             <button onClick = {handleRemove}>Remove</button>
         </div>

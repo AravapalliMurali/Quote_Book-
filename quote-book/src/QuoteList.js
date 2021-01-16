@@ -2,7 +2,7 @@ import React from 'react'
 import QuoteItem from './QuoteItem'
 
 export default function QuoteList(props){
-    const {Quotes , removeItem} = props
+    const {Quotes , RemoveItem} = props
 
      return(
          <div>
@@ -17,7 +17,8 @@ export default function QuoteList(props){
                      {
                          Quotes.map(ele=>{
                              return(
-                                 <QuoteItem key={ele.id} {...ele} removeItem ={removeItem}/>
+                                 <QuoteItem key={ele.id} {...ele}
+                                  RemoveItem ={RemoveItem}/>
                              )
                          })
                      }
